@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,33 +23,13 @@ foreach($files as $file) {
         <input type="hidden" name="filename" value="'.$file.'">
    <input type="submit" value="delete">
     </form>';
+
+     echo '<form  method="GET" action="create.php">
+        <input type="hidden" name="filename" value="'.$file.'">
+   <input type="submit" value="edit">
+    </form>';
+
 }
-
-
-
-
-
-
-
-/*$log_directory = 'posts';$results_array = array();if (is_dir($log_directory))
-{
-       if ($handle = opendir($log_directory))
-       {
-              //handle pointeur de systeme de fichier de type ressource
-              cree en utlisant la fonction fopen//
-               while(($file = readdir($handle)) !== FALSE)
-               {
-                       $results_array[] = $file;
-               }
-               closedir($handle);
-       }
-}foreach($results_array as $value)
-//pour enlever les points qui st à l'ecran//
-if(is_file('posts/' .$value)) 
-{
-   echo "<ul>".$value ."</ul>". '<br/>';
-}
-*/
 
 ?>
 </body>
