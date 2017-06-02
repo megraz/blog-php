@@ -5,7 +5,7 @@ $titre="";
 $contenu="";
 
 if (isset($_GET['filename'])){ //on utilise isset pr vérifier que le fichier existe//
-    $titre = $_GET['filename']; //on récupère les données titre du fichier//
+    $titre = basename($_GET['filename'], ".txt"); //on récupère les données titre du fichier et on rajoute basename([], ".txt") pr supp le txt qui s'ecrit en plus//
     $contenu = file_get_contents('posts/'.$_GET['filename']); // on recup le contenu et on y accède//
 }
 ?><!DOCTYPE html><!--il faut tjs accoler la balise html à celle du php-->
