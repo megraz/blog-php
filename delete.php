@@ -4,4 +4,5 @@ $file = $_GET['filename'];
     {
    unlink('posts/'.$file);
     }
+    //pour supprimer le fichier en cliquant sur le bouton//
 ?>
