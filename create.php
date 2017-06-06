@@ -24,9 +24,10 @@ body {
     background: url("subtle_white_mini_waves.png");
 }
 </style>
-    <form action="create-file.php" method="POST">
+    <form action="edit.php" method="POST"> <!--pr modifier le fichier qui ne va pas en creer un autre on crée une pg edit.php-->
         <label>Titre</label>
         <input type="text" name="titre" value="<?php echo $titre;?>"> <!--on remplace la valeur de l'input par une balise php pr afficher la variable qu'on a déclaré pr le titre-->
+        <input type="hidden" name="previous_title" value="<?php echo $titre;?>"> <!--on crée un bouton hidden pr recup la valeur du titre cf ac pg edit.php-->
         <label>Contenu</label>
         <textarea name="contenu" cols="30" row="10"><?php echo $contenu; ?></textarea>
         <button name="create">Submit</button>
