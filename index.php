@@ -7,27 +7,29 @@
    <title>Mon blog</title>
 </head>
 <body>
-   <h1> Mon blog </h1>
- 
-<?php 
 
+
+   <?php require_once('header.php'); ?>
+   <h1> Mon blog </h1>
+   <a href="create.html">Ajouter</a>
+<?php 
 $files = scandir("posts");
 foreach($files as $file) {
         if (is_dir($file)) {
                 continue;
         }
-        echo '<h1>' .basename($file, ".txt"). '</h1>';
+        echo '<h2>' .basename($file, ".txt"). '</h2>';
         $content = file_get_contents('posts/' .$file);
         echo '<p>' .$content. '</p>';
-  echo '<form  method="GET" action="delete.php">
+        echo '<form  method="post" action="delete.php">';
+        echo '<input type="hidden"'.'name="filename" value="'.$file.'">';
+        echo '<button>Supprimer</button>';
+        echo '</form>';
+        echo '<a href="change-file.php?fichier='.$file.'">Modifier</a>';
+        /*echo '<form  method="GET" action="create.php">
         <input type="hidden" name="filename" value="'.$file.'">
-   <input type="submit" value="delete">
-    </form>';
-
-     echo '<form  method="GET" action="create.php">
-        <input type="hidden" name="filename" value="'.$file.'">
-   <input type="submit" value="edit">
-    </form>';
+        <input type="submit" value="edit">
+        </form>'; */
 
 }
 
