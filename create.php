@@ -19,6 +19,11 @@ if (isset($_GET['filename'])){ //on utilise isset pr vérifier que le fichier ex
 </head>
 
 <body>
+<style>
+body {
+    background: url("subtle_white_mini_waves.png");
+}
+</style>
     <form action="create-file.php" method="POST">
         <label>Titre</label>
         <input type="text" name="titre" value="<?php echo $titre;?>"> <!--on remplace la valeur de l'input par une balise php pr afficher la variable qu'on a déclaré pr le titre-->
@@ -31,6 +36,7 @@ if (isset($_GET['filename'])){ //on utilise isset pr vérifier que le fichier ex
         <p><textarea rows="20" cols="100" name="message" ><?php echo $contenu; ?></textarea></p>
         <p><input type="submit" value="submit" name="create" /></p>
     </form>-->
+ 
 </body>
 
 
